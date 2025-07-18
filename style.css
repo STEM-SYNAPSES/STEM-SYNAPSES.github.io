@@ -1,0 +1,81 @@
+/* style.css - Shared CSS for all Synapses Club Pages */
+
+:root {
+  --primary-color: #b30000;
+  --secondary-color: #fff5f5;
+  --text-color: #333;
+  --accent-color: #ff4d4d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--primary-color);
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.navbar {
+  background: #800000;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  display: inline-block;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.navbar a:hover {
+  background: var(--accent-color);
+  border-radius: 5px;
+}
+
+main {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+}
+
+footer {
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
