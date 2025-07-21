@@ -46,10 +46,6 @@ header {
   flex-shrink: 0;
 }
 
-.navbar a:hover {
-  background: var(--accent-color);
-  border-radius: 5px;
-}
 .navbar a.active {
   background: white;
   color: var(--primary-color);
