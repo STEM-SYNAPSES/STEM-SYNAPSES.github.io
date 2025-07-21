@@ -50,7 +50,11 @@ header {
   background: var(--accent-color);
   border-radius: 5px;
 }
-
+.navbar a.active {
+  background: white;
+  color: var(--primary-color);
+  border-radius: 6px;
+}
 main {
   padding: 2rem 1rem;
   max-width: 900px;
