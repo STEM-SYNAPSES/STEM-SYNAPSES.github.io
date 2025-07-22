@@ -6,34 +6,52 @@
   <title>AuthenCheck | TNTS Synapses STEM Club</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .analyzer {
+    .authen-container {
       background: white;
       padding: 2rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+      max-width: 800px;
+      margin: auto;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
     }
 
-    textarea {
+    .authen-container textarea {
       width: 100%;
       height: 200px;
       padding: 1rem;
       font-size: 1rem;
-      border: 2px solid #ccc;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
       border-radius: 8px;
       resize: vertical;
     }
 
-    .results {
-      margin-top: 1.5rem;
-      background: #fff0f0;
-      padding: 1rem;
-      border-left: 5px solid var(--primary-color);
+    .authen-container button {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
     }
 
-    .results p {
+    .authen-container button:hover {
+      background: var(--accent-color);
+    }
+
+    .result-box {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: #ffe6e6;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .result-box p {
+      font-size: 1.1rem;
       margin-bottom: 0.5rem;
-      font-weight: bold;
     }
   </style>
 </head>
@@ -51,23 +69,58 @@
   </nav>
 
   <main>
-    <section class="card">
-      <h2>AuthenCheck – Plagiarism & AI Detection Tool</h2>
-      <div class="analyzer">
-        <label for="inputText"><strong>Paste your text below:</strong></label><br><br>
-        <textarea id="inputText" placeholder="Enter or paste your content here..."></textarea><br><br>
-        <button onclick="checkText()">Check</button>
+    <section class="authen-container">
+      <h2>AuthenCheck: Plagiarism & AI Detection Tool</h2>
+      <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+      <br>
+      <button onclick="checkText()">Check Text</button>
 
-        <div class="results" id="results" style="display:none;">
-          <p id="plagiarism">Plagiarism Score: Checking...</p>
-          <p id="aiDetection">AI Detection Score: Checking...</p>
-        </div>
+      <div id="results" class="result-box">
+        <p id="plagiarism"></p>
+        <p id="aiDetection"></p>
       </div>
-      <a href="projects.html"><button>← Back to Projects</button></a>
     </section>
   </main>
 
   <script>
+    const sampleSources = [
+      "The mitochondria is the powerhouse of the cell.",
+      "Photosynthesis is the process by which plants make food.",
+      "Newton's third law states that for every action there is an equal and opposite reaction.",
+      "Climate change is a long-term alteration of temperature and typical weather patterns.",
+      "Water is composed of two hydrogen atoms and one oxygen atom.",
+      "Matter cannot be created or destroyed in a chemical reaction."
+    ];
+
+    function simplePlagiarismCheck(text) {
+      let matches = 0;
+      for (let phrase of sampleSources) {
+        if (text.toLowerCase().includes(phrase.toLowerCase())) {
+          matches++;
+        }
+      }
+      return ((matches / sampleSources.length) * 100).toFixed(2);
+    }
+
+    function simulateAIDetection(text) {
+      const aiWords = ["thus", "therefore", "in conclusion", "hence", "furthermore", "consequently", "significantly"];
+      let score = 0;
+
+      for (let word of aiWords) {
+        if (text.toLowerCase().includes(word)) {
+          score += 10;
+        }
+      }
+
+      const sentenceCount = text.split(/[.?!]/).filter(Boolean).length;
+      const wordCount = text.split(/\s+/).filter(Boolean).length;
+      const avgWords = sentenceCount === 0 ? 0 : wordCount / sentenceCount;
+
+      if (avgWords > 18) score += 20;
+
+      return Math.min(score, 100).toFixed(2);
+    }
+
     function checkText() {
       const text = document.getElementById("inputText").value;
       const resultBox = document.getElementById("results");
@@ -79,9 +132,8 @@
         return;
       }
 
-      // Simulate checking (replace with real API later)
-      plagiarism.textContent = "Plagiarism Score: " + (Math.random() * 20).toFixed(2) + "%";
-      aiDetection.textContent = "AI Detection Score: " + (Math.random() * 100).toFixed(2) + "%";
+      plagiarism.textContent = "📋 Plagiarism Match Score: " + simplePlagiarismCheck(text) + "%";
+      aiDetection.textContent = "🤖 AI Detection Score: " + simulateAIDetection(text) + "%";
 
       resultBox.style.display = "block";
     }
