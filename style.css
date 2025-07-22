@@ -100,6 +100,14 @@ main {
   font-weight: bold;
   cursor: pointer;
 }
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.card-link:hover {
+  opacity: 0.97;
+}
 
 h2 {
   margin-bottom: 1rem;
