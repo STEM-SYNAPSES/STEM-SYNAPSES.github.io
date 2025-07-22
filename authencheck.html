@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AuthenCheck | TNTS Synapses STEM Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .analyzer {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      padding: 1rem;
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+    }
+
+    .results {
+      margin-top: 1.5rem;
+      background: #fff0f0;
+      padding: 1rem;
+      border-left: 5px solid var(--primary-color);
+    }
+
+    .results p {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TNTS Synapses STEM Club</h1>
+    <p>"Synapses Firing, Mind Inspiring"</p>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="news.html">News</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h2>AuthenCheck – Plagiarism & AI Detection Tool</h2>
+      <div class="analyzer">
+        <label for="inputText"><strong>Paste your text below:</strong></label><br><br>
+        <textarea id="inputText" placeholder="Enter or paste your content here..."></textarea><br><br>
+        <button onclick="checkText()">Check</button>
+
+        <div class="results" id="results" style="display:none;">
+          <p id="plagiarism">Plagiarism Score: Checking...</p>
+          <p id="aiDetection">AI Detection Score: Checking...</p>
+        </div>
+      </div>
+      <a href="projects.html"><button>← Back to Projects</button></a>
+    </section>
+  </main>
+
+  <script>
+    function checkText() {
+      const text = document.getElementById("inputText").value;
+      const resultBox = document.getElementById("results");
+      const plagiarism = document.getElementById("plagiarism");
+      const aiDetection = document.getElementById("aiDetection");
+
+      if (!text.trim()) {
+        alert("Please enter some text first.");
+        return;
+      }
+
+      // Simulate checking (replace with real API later)
+      plagiarism.textContent = "Plagiarism Score: " + (Math.random() * 20).toFixed(2) + "%";
+      aiDetection.textContent = "AI Detection Score: " + (Math.random() * 100).toFixed(2) + "%";
+
+      resultBox.style.display = "block";
+    }
+  </script>
+</body>
+</html>
