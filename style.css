@@ -48,8 +48,6 @@ header p {
   gap: 1rem;
   padding: 0.7rem 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 .navbar a {
@@ -103,8 +101,6 @@ main {
 .card-image img {
   width: 100%;
   display: block;
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
 }
 
 .card-image h3 {
@@ -120,7 +116,7 @@ main {
 
 .card-image p,
 .card-image button {
-  padding: 0 1.5rem 1rem 1.5rem;
+  padding: 1 1.5rem 1rem 1.5rem;
 }
 
 .card-image button {
