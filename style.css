@@ -1,10 +1,11 @@
-/* style.css - Polished & Boxy Design for Synapses Club */
+/* style.css - Aesthetic Version for Synapses Club Website */
 
 :root {
   --primary-color: #b30000;
   --secondary-color: #fff5f5;
   --text-color: #2c2c2c;
   --accent-color: #ff4d4d;
+  --highlight-color: #ffcccc;
 }
 
 * {
@@ -15,7 +16,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom, #fff5f5, #ffeaea);
+  background: linear-gradient(to bottom, #fff5f5, #ffe6e6);
   color: var(--text-color);
   line-height: 1.7;
 }
@@ -54,6 +55,7 @@ header p {
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 1rem;
+  border-radius: 8px;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -77,14 +79,14 @@ main {
 .card {
   background: white;
   padding: 1.5rem;
-  border-radius: 0px; /* boxy */
+  border-radius: 14px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
   margin-bottom: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
@@ -94,7 +96,6 @@ main {
   color: #f8dfe5;
   overflow: hidden;
   padding: 0;
-  border-radius: 0; /* boxy card */
 }
 
 .card-image img {
@@ -115,14 +116,14 @@ main {
 
 .card-image p,
 .card-image button {
-  padding: 0 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
 }
 
 .card-image button {
   background: #c2185b;
-  border-radius: 25px;
+  border-radius: 30px;
   font-size: 0.9rem;
-  padding: 0.6rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 /* === CARD CONTENT === */
@@ -136,7 +137,7 @@ button {
   color: white;
   border: none;
   padding: 0.6rem 1.4rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   font-size: 0.95rem;
@@ -176,4 +177,6 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   margin-top: 2rem;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
