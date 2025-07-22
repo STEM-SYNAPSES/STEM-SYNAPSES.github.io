@@ -52,7 +52,10 @@ header {
   border-radius: 6px;
 }
 main {
-  padding: 0rem 0rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0rem;
   max-width: 900px;
   margin: auto;
 }
