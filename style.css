@@ -64,6 +64,41 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   margin-bottom: 0.5rem;
 }
+.card-image {
+  background: #880e4f; /* dark pink/maroon */
+  color: #f8dfe5;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.card-image h3 {
+  font-size: 1rem;
+  color: #f8dfe5;
+  margin-bottom: 0.5rem;
+}
+
+.card-image blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.card-image button {
+  background: #ad1457;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 h2 {
   margin-bottom: 1rem;
